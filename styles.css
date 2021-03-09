@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+:root {
+  --main-color: rgb(80, 138, 185);
+  --nav-highlight: rgb(220, 232, 241);
+  --secondary-bg-color: gold;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", san-serif;
+}
+
+body {
+  background: var(--main-color);
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.container {
+  position: relative;
+}
+
+.navigation {
+  height: 360px;
+  width: 74px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  transition: 0.5s;
+}
+
+.navigation.active{
+  width:300px;
+}
+
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navigation ul li {
+  list-style-type: none;
+  position: relative;
+  width: 100%;
+}
+
+.navigation ul li:hover {
+  background:var(--nav-highlight)
+}
+
+.navigation ul li a {
+  position: relative;
+  display: block;
+  display:flex;
+  text-decoration: none;
+  width: 100%;
+  color:var(--main-color);
+  font-weight: 500;
+}
+
+.navigation ul li a .icon {
+  display: block;
+  position: relative;
+  height:60px;
+  min-width: 75px;
+  line-height: 60px;
+  text-align: center;
+}
+
+.navigation ul li a .icon .fa {
+  font-size: 24px;
+}
+
+.navigation ul li a .title {
+  height:60px;
+  line-height: 60px;
+  position: relative;
+  display:block;
+  white-space: nowrap;
+}
+
+.nav_toggle {
+  position: absolute;
+  top: calc(50% - 20px);
+  right:-20px;
+  height:40px;
+  width:40px;
+  background:var(--nav-highlight);
+  cursor:pointer;
+  border:5px solid var(--main-color);
+  border-radius: 50%;
+}
+
+.nav_toggle::before{
+  content:'\f054';
+  font-family:fontAwesome;
+  color:var(--main-color);
+  font-size:20px;
+  position:absolute;
+  height:100%;
+  width:100%;
+  line-height: 30px;
+  text-align: center;
+}
+
+.nav_toggle.active::before{
+  content:'\f053';
+}
